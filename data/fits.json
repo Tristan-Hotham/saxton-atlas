@@ -1,0 +1,2137 @@
+{
+ "p014": {
+  "title": "England and Wales (general map)",
+  "short": "General map",
+  "year": 1579,
+  "region": "General",
+  "n_read": 46,
+  "n": 46,
+  "n_out": 0,
+  "n_conf1": 0,
+  "px_per_km": 3.718,
+  "km_per_1000px": 268.96,
+  "turn_deg": -0.89,
+  "aniso": 1.021,
+  "med_km": 4.23,
+  "mean_km": 4.67,
+  "p90_km": 8.9,
+  "max_km": 13.42,
+  "med_aff_km": 4.08,
+  "loo_tps_med_km": 4.46,
+  "med_conf1_km": null,
+  "worst": {
+   "name": "Derby",
+   "err_km": 13.42
+  },
+  "centre": [
+   -2.0828,
+   52.2586
+  ],
+  "corners": [
+   [
+    -11.03807,
+    56.05857
+   ],
+   [
+    5.42142,
+    56.39484
+   ],
+   [
+    4.41995,
+    49.20622
+   ],
+   [
+    -9.54282,
+    48.9042
+   ]
+  ],
+  "affine_px": [
+   [
+    3.764294,
+    -0.097379
+   ],
+   [
+    0.049261,
+    3.701538
+   ],
+   [
+    2073.431419,
+    -1749.644167
+   ]
+  ]
+ },
+ "p017": {
+  "title": "Kent, Sussex, Surrey and Middlesex",
+  "short": "Kent and Sussex",
+  "year": 1575,
+  "region": "South-east",
+  "n_read": 28,
+  "n": 28,
+  "n_out": 0,
+  "n_conf1": 20,
+  "px_per_km": 20.693,
+  "km_per_1000px": 48.33,
+  "turn_deg": 7.79,
+  "aniso": 1.015,
+  "med_km": 1.34,
+  "mean_km": 1.57,
+  "p90_km": 3.06,
+  "max_km": 3.45,
+  "med_aff_km": 1.37,
+  "loo_tps_med_km": 1.78,
+  "med_conf1_km": 1.43,
+  "worst": {
+   "name": "Bromley",
+   "err_km": 3.45
+  },
+  "centre": [
+   0.0573,
+   51.2706
+  ],
+  "corners": [
+   [
+    -0.95602,
+    51.90878
+   ],
+   [
+    1.6939,
+    51.67791
+   ],
+   [
+    1.36898,
+    50.39169
+   ],
+   [
+    -1.20947,
+    50.61611
+   ]
+  ],
+  "affine_px": [
+   [
+    20.602512,
+    2.764242
+   ],
+   [
+    -2.859505,
+    20.302607
+   ],
+   [
+    1641.160831,
+    -1258.590774
+   ]
+  ]
+ },
+ "p020": {
+  "title": "Hampshire",
+  "short": "Hampshire",
+  "year": 1575,
+  "region": "South-east",
+  "n_read": 21,
+  "n": 21,
+  "n_out": 0,
+  "n_conf1": 16,
+  "px_per_km": 26.613,
+  "km_per_1000px": 37.58,
+  "turn_deg": 7.83,
+  "aniso": 1.084,
+  "med_km": 1.62,
+  "mean_km": 1.69,
+  "p90_km": 2.49,
+  "max_km": 3.47,
+  "med_aff_km": 1.62,
+  "loo_tps_med_km": 2.45,
+  "med_conf1_km": 1.66,
+  "worst": {
+   "name": "Ringwood",
+   "err_km": 3.47
+  },
+  "centre": [
+   -1.1817,
+   51.0183
+  ],
+  "corners": [
+   [
+    -2.2753,
+    51.60598
+   ],
+   [
+    -0.14126,
+    51.37973
+   ],
+   [
+    -0.32945,
+    50.38563
+   ],
+   [
+    -2.41909,
+    50.60892
+   ]
+  ],
+  "affine_px": [
+   [
+    25.44865,
+    4.518895
+   ],
+   [
+    -2.717014,
+    26.550745
+   ],
+   [
+    2107.121263,
+    -1408.430568
+   ]
+  ]
+ },
+ "p023": {
+  "title": "Dorset",
+  "short": "Dorset",
+  "year": 1575,
+  "region": "South-west",
+  "n_read": 19,
+  "n": 19,
+  "n_out": 0,
+  "n_conf1": 18,
+  "px_per_km": 34.17,
+  "km_per_1000px": 29.27,
+  "turn_deg": 6.51,
+  "aniso": 1.052,
+  "med_km": 0.97,
+  "mean_km": 1.15,
+  "p90_km": 1.94,
+  "max_km": 2.58,
+  "med_aff_km": 0.94,
+  "loo_tps_med_km": 1.22,
+  "med_conf1_km": 0.95,
+  "worst": {
+   "name": "Sherborne",
+   "err_km": 2.58
+  },
+  "centre": [
+   -2.3103,
+   50.7738
+  ],
+  "corners": [
+   [
+    -3.18489,
+    51.26319
+   ],
+   [
+    -1.59175,
+    51.13186
+   ],
+   [
+    -1.70706,
+    50.33482
+   ],
+   [
+    -3.27358,
+    50.46479
+   ]
+  ],
+  "affine_px": [
+   [
+    34.114629,
+    4.427958
+   ],
+   [
+    -2.824972,
+    33.475541
+   ],
+   [
+    2237.465415,
+    -1564.19336
+   ]
+  ]
+ },
+ "p026": {
+  "title": "Wiltshire",
+  "short": "Wiltshire",
+  "year": 1576,
+  "region": "South-west",
+  "n_read": 28,
+  "n": 28,
+  "n_out": 0,
+  "n_conf1": 25,
+  "px_per_km": 29.151,
+  "km_per_1000px": 34.3,
+  "turn_deg": 4.25,
+  "aniso": 1.098,
+  "med_km": 1.15,
+  "mean_km": 1.27,
+  "p90_km": 2.43,
+  "max_km": 2.87,
+  "med_aff_km": 0.78,
+  "loo_tps_med_km": 1.06,
+  "med_conf1_km": 1.12,
+  "worst": {
+   "name": "Ludgershall",
+   "err_km": 2.87
+  },
+  "centre": [
+   -1.9513,
+   51.3586
+  ],
+  "corners": [
+   [
+    -3.02639,
+    51.85671
+   ],
+   [
+    -1.17377,
+    51.70841
+   ],
+   [
+    -1.25266,
+    50.77766
+   ],
+   [
+    -3.06833,
+    50.92505
+   ]
+  ],
+  "affine_px": [
+   [
+    29.874823,
+    3.756921
+   ],
+   [
+    -1.288365,
+    28.650814
+   ],
+   [
+    2284.835575,
+    -1325.309258
+   ]
+  ]
+ },
+ "p029": {
+  "title": "Somerset",
+  "short": "Somerset",
+  "year": 1575,
+  "region": "South-west",
+  "n_read": 22,
+  "n": 22,
+  "n_out": 0,
+  "n_conf1": 17,
+  "px_per_km": 29.664,
+  "km_per_1000px": 33.71,
+  "turn_deg": 1.17,
+  "aniso": 1.016,
+  "med_km": 1.29,
+  "mean_km": 1.31,
+  "p90_km": 1.93,
+  "max_km": 2.28,
+  "med_aff_km": 1.31,
+  "loo_tps_med_km": 1.05,
+  "med_conf1_km": 1.25,
+  "worst": {
+   "name": "Langport",
+   "err_km": 2.28
+  },
+  "centre": [
+   -2.7633,
+   51.1446
+  ],
+  "corners": [
+   [
+    -3.9294,
+    51.6254
+   ],
+   [
+    -2.0437,
+    51.60599
+   ],
+   [
+    -2.07943,
+    50.70711
+   ],
+   [
+    -3.92884,
+    50.72627
+   ]
+  ],
+  "affine_px": [
+   [
+    29.393206,
+    0.584123
+   ],
+   [
+    -0.45438,
+    29.834632
+   ],
+   [
+    2398.009094,
+    -1567.776934
+   ]
+  ]
+ },
+ "p032": {
+  "title": "Devon",
+  "short": "Devon",
+  "year": 1575,
+  "region": "South-west",
+  "n_read": 22,
+  "n": 22,
+  "n_out": 0,
+  "n_conf1": 19,
+  "px_per_km": 21.912,
+  "km_per_1000px": 45.64,
+  "turn_deg": -3.1,
+  "aniso": 1.138,
+  "med_km": 2.66,
+  "mean_km": 2.78,
+  "p90_km": 4.48,
+  "max_km": 5.05,
+  "med_aff_km": 2.24,
+  "loo_tps_med_km": 1.18,
+  "med_conf1_km": 2.6,
+  "worst": {
+   "name": "Cullompton",
+   "err_km": 5.05
+  },
+  "centre": [
+   -3.768,
+   50.6974
+  ],
+  "corners": [
+   [
+    -5.14648,
+    51.29636
+   ],
+   [
+    -2.53335,
+    51.27171
+   ],
+   [
+    -2.41036,
+    50.0928
+   ],
+   [
+    -4.9588,
+    50.12089
+   ]
+  ],
+  "affine_px": [
+   [
+    21.09201,
+    0.367771
+   ],
+   [
+    1.769136,
+    22.966287
+   ],
+   [
+    1908.335078,
+    -1515.631238
+   ]
+  ]
+ },
+ "p035": {
+  "title": "Cornwall",
+  "short": "Cornwall",
+  "year": 1576,
+  "region": "South-west",
+  "n_read": 20,
+  "n": 20,
+  "n_out": 0,
+  "n_conf1": 17,
+  "px_per_km": 21.696,
+  "km_per_1000px": 46.09,
+  "turn_deg": -23.96,
+  "aniso": 1.023,
+  "med_km": 1.6,
+  "mean_km": 1.68,
+  "p90_km": 2.86,
+  "max_km": 4.64,
+  "med_aff_km": 1.6,
+  "loo_tps_med_km": 1.27,
+  "med_conf1_km": 1.22,
+  "worst": {
+   "name": "Launceston",
+   "err_km": 4.64
+  },
+  "centre": [
+   -4.9295,
+   50.3552
+  ],
+  "corners": [
+   [
+    -6.56549,
+    50.58579
+   ],
+   [
+    -4.26349,
+    51.24335
+   ],
+   [
+    -3.4681,
+    50.11636
+   ],
+   [
+    -5.72764,
+    49.4747
+   ]
+  ],
+  "affine_px": [
+   [
+    19.598363,
+    -8.89104
+   ],
+   [
+    9.127615,
+    20.025684
+   ],
+   [
+    2024.764292,
+    -1569.132391
+   ]
+  ]
+ },
+ "p038": {
+  "title": "Essex",
+  "short": "Essex",
+  "year": 1576,
+  "region": "East",
+  "n_read": 17,
+  "n": 17,
+  "n_out": 0,
+  "n_conf1": 10,
+  "px_per_km": 33.688,
+  "km_per_1000px": 29.68,
+  "turn_deg": 12.41,
+  "aniso": 1.053,
+  "med_km": 1.97,
+  "mean_km": 1.62,
+  "p90_km": 2.56,
+  "max_km": 3.0,
+  "med_aff_km": 1.54,
+  "loo_tps_med_km": 2.09,
+  "med_conf1_km": 1.85,
+  "worst": {
+   "name": "Billericay",
+   "err_km": 3.0
+  },
+  "centre": [
+   0.428,
+   51.6982
+  ],
+  "corners": [
+   [
+    -0.05882,
+    52.22954
+   ],
+   [
+    1.5249,
+    52.02099
+   ],
+   [
+    1.21018,
+    51.22717
+   ],
+   [
+    -0.34734,
+    51.4317
+   ]
+  ],
+  "affine_px": [
+   [
+    33.725056,
+    6.776752
+   ],
+   [
+    -7.863193,
+    32.338015
+   ],
+   [
+    1587.49142,
+    -1689.879986
+   ]
+  ]
+ },
+ "p041": {
+  "title": "Hertfordshire",
+  "short": "Hertfordshire",
+  "year": 1577,
+  "region": "East",
+  "n_read": 24,
+  "n": 24,
+  "n_out": 0,
+  "n_conf1": 22,
+  "px_per_km": 46.052,
+  "km_per_1000px": 21.71,
+  "turn_deg": 12.69,
+  "aniso": 1.088,
+  "med_km": 1.27,
+  "mean_km": 1.41,
+  "p90_km": 2.66,
+  "max_km": 3.02,
+  "med_aff_km": 1.17,
+  "loo_tps_med_km": 1.51,
+  "med_conf1_km": 1.27,
+  "worst": {
+   "name": "Letchworth Garden City",
+   "err_km": 3.02
+  },
+  "centre": [
+   -0.2275,
+   51.8072
+  ],
+  "corners": [
+   [
+    -0.6996,
+    52.19359
+   ],
+   [
+    0.44022,
+    52.04524
+   ],
+   [
+    0.18643,
+    51.47157
+   ],
+   [
+    -0.93977,
+    51.61757
+   ]
+  ],
+  "affine_px": [
+   [
+    46.564567,
+    9.286279
+   ],
+   [
+    -12.413067,
+    44.212826
+   ],
+   [
+    2038.317418,
+    -1605.528199
+   ]
+  ]
+ },
+ "p044": {
+  "title": "Oxfordshire, Buckinghamshire and Berkshire",
+  "short": "Oxon, Bucks, Berks",
+  "year": 1574,
+  "region": "South-east",
+  "n_read": 28,
+  "n": 28,
+  "n_out": 0,
+  "n_conf1": 25,
+  "px_per_km": 23.562,
+  "km_per_1000px": 42.44,
+  "turn_deg": 10.07,
+  "aniso": 1.02,
+  "med_km": 0.93,
+  "mean_km": 1.26,
+  "p90_km": 2.41,
+  "max_km": 4.13,
+  "med_aff_km": 1.19,
+  "loo_tps_med_km": 0.98,
+  "med_conf1_km": 0.92,
+  "worst": {
+   "name": "Olney",
+   "err_km": 4.13
+  },
+  "centre": [
+   -1.0802,
+   51.723
+  ],
+  "corners": [
+   [
+    -2.04455,
+    52.41341
+   ],
+   [
+    0.30568,
+    52.16889
+   ],
+   [
+    -0.06219,
+    51.04559
+   ],
+   [
+    -2.3565,
+    51.28344
+   ]
+  ],
+  "affine_px": [
+   [
+    23.21222,
+    3.8741
+   ],
+   [
+    -4.336685,
+    23.242625
+   ],
+   [
+    1858.125764,
+    -1541.382627
+   ]
+  ]
+ },
+ "p047": {
+  "title": "Gloucestershire",
+  "short": "Gloucestershire",
+  "year": 1577,
+  "region": "South-west",
+  "n_read": 24,
+  "n": 24,
+  "n_out": 0,
+  "n_conf1": 21,
+  "px_per_km": 24.225,
+  "km_per_1000px": 41.28,
+  "turn_deg": 9.25,
+  "aniso": 1.075,
+  "med_km": 1.34,
+  "mean_km": 1.45,
+  "p90_km": 2.12,
+  "max_km": 2.77,
+  "med_aff_km": 1.26,
+  "loo_tps_med_km": 1.1,
+  "med_conf1_km": 1.34,
+  "worst": {
+   "name": "Stonehouse",
+   "err_km": 2.77
+  },
+  "centre": [
+   -2.1706,
+   51.7707
+  ],
+  "corners": [
+   [
+    -3.27426,
+    52.40864
+   ],
+   [
+    -0.88172,
+    52.212
+   ],
+   [
+    -1.15728,
+    51.14833
+   ],
+   [
+    -3.49514,
+    51.34002
+   ]
+  ],
+  "affine_px": [
+   [
+    23.085395,
+    3.297876
+   ],
+   [
+    -3.345107,
+    24.83522
+   ],
+   [
+    1973.167731,
+    -1529.298492
+   ]
+  ]
+ },
+ "p050": {
+  "title": "Suffolk",
+  "short": "Suffolk",
+  "year": 1575,
+  "region": "East",
+  "n_read": 24,
+  "n": 24,
+  "n_out": 0,
+  "n_conf1": 14,
+  "px_per_km": 24.875,
+  "km_per_1000px": 40.2,
+  "turn_deg": 6.55,
+  "aniso": 1.088,
+  "med_km": 1.76,
+  "mean_km": 1.96,
+  "p90_km": 3.17,
+  "max_km": 4.78,
+  "med_aff_km": 1.53,
+  "loo_tps_med_km": 1.31,
+  "med_conf1_km": 1.75,
+  "worst": {
+   "name": "Rendlesham",
+   "err_km": 4.78
+  },
+  "centre": [
+   1.099,
+   52.1947
+  ],
+  "corners": [
+   [
+    0.02192,
+    52.93351
+   ],
+   [
+    2.24203,
+    52.74847
+   ],
+   [
+    1.97336,
+    51.596
+   ],
+   [
+    -0.19081,
+    51.77662
+   ]
+  ],
+  "affine_px": [
+   [
+    25.220618,
+    3.178642
+   ],
+   [
+    -3.257597,
+    23.172719
+   ],
+   [
+    2096.082459,
+    -1687.312445
+   ]
+  ]
+ },
+ "p053": {
+  "title": "Norfolk",
+  "short": "Norfolk",
+  "year": 1574,
+  "region": "East",
+  "n_read": 24,
+  "n": 24,
+  "n_out": 0,
+  "n_conf1": 17,
+  "px_per_km": 23.664,
+  "km_per_1000px": 42.26,
+  "turn_deg": 9.8,
+  "aniso": 1.033,
+  "med_km": 2.01,
+  "mean_km": 2.16,
+  "p90_km": 3.53,
+  "max_km": 4.6,
+  "med_aff_km": 1.93,
+  "loo_tps_med_km": 1.33,
+  "med_conf1_km": 2.01,
+  "worst": {
+   "name": "Wells-next-the-Sea",
+   "err_km": 4.6
+  },
+  "centre": [
+   1.1133,
+   52.6923
+  ],
+  "corners": [
+   [
+    -0.04787,
+    53.29702
+   ],
+   [
+    2.35942,
+    53.06164
+   ],
+   [
+    1.99428,
+    51.96761
+   ],
+   [
+    -0.35527,
+    52.19629
+   ]
+  ],
+  "affine_px": [
+   [
+    23.15031,
+    3.847746
+   ],
+   [
+    -4.359265,
+    23.731682
+   ],
+   [
+    2088.3874,
+    -1314.123685
+   ]
+  ]
+ },
+ "p056": {
+  "title": "Northamptonshire, Bedfordshire, Cambridgeshire, Huntingdonshire and Rutland",
+  "short": "Northants and Cambs",
+  "year": 1576,
+  "region": "Midlands",
+  "n_read": 36,
+  "n": 36,
+  "n_out": 0,
+  "n_conf1": 30,
+  "px_per_km": 22.315,
+  "km_per_1000px": 44.81,
+  "turn_deg": 6.93,
+  "aniso": 1.037,
+  "med_km": 2.0,
+  "mean_km": 2.18,
+  "p90_km": 3.6,
+  "max_km": 7.79,
+  "med_aff_km": 1.95,
+  "loo_tps_med_km": 1.59,
+  "med_conf1_km": 1.72,
+  "worst": {
+   "name": "Wisbech",
+   "err_km": 7.79
+  },
+  "centre": [
+   -0.3935,
+   52.274
+  ],
+  "corners": [
+   [
+    -1.72423,
+    53.0304
+   ],
+   [
+    0.84959,
+    52.82046
+   ],
+   [
+    0.61324,
+    51.61028
+   ],
+   [
+    -1.89213,
+    51.81594
+   ]
+  ],
+  "affine_px": [
+   [
+    21.877485,
+    3.014698
+   ],
+   [
+    -2.280505,
+    22.23648
+   ],
+   [
+    2146.912965,
+    -1620.842333
+   ]
+  ]
+ },
+ "p059": {
+  "title": "Warwickshire and Leicestershire",
+  "short": "Warwick and Leicester",
+  "year": 1576,
+  "region": "Midlands",
+  "n_read": 19,
+  "n": 19,
+  "n_out": 0,
+  "n_conf1": 13,
+  "px_per_km": 22.59,
+  "km_per_1000px": 44.27,
+  "turn_deg": -9.71,
+  "aniso": 1.07,
+  "med_km": 1.58,
+  "mean_km": 1.71,
+  "p90_km": 2.96,
+  "max_km": 3.68,
+  "med_aff_km": 1.32,
+  "loo_tps_med_km": 1.68,
+  "med_conf1_km": 1.58,
+  "worst": {
+   "name": "Kenilworth",
+   "err_km": 3.68
+  },
+  "centre": [
+   -1.4612,
+   52.4973
+  ],
+  "corners": [
+   [
+    -2.89373,
+    52.85713
+   ],
+   [
+    -0.45769,
+    53.14831
+   ],
+   [
+    -0.24059,
+    51.96412
+   ],
+   [
+    -2.61396,
+    51.67795
+   ]
+  ],
+  "affine_px": [
+   [
+    22.89895,
+    -4.353473
+   ],
+   [
+    2.916428,
+    22.321594
+   ],
+   [
+    2089.890835,
+    -1335.276568
+   ]
+  ]
+ },
+ "p062": {
+  "title": "Staffordshire",
+  "short": "Staffordshire",
+  "year": 1577,
+  "region": "Midlands",
+  "n_read": 18,
+  "n": 18,
+  "n_out": 0,
+  "n_conf1": 10,
+  "px_per_km": 22.963,
+  "km_per_1000px": 43.55,
+  "turn_deg": 11.24,
+  "aniso": 1.016,
+  "med_km": 1.14,
+  "mean_km": 1.13,
+  "p90_km": 1.64,
+  "max_km": 2.76,
+  "med_aff_km": 1.14,
+  "loo_tps_med_km": 1.31,
+  "med_conf1_km": 1.16,
+  "worst": {
+   "name": "West Bromwich",
+   "err_km": 2.76
+  },
+  "centre": [
+   -1.998,
+   52.7295
+  ],
+  "corners": [
+   [
+    -3.05207,
+    53.49526
+   ],
+   [
+    -0.62043,
+    53.20422
+   ],
+   [
+    -1.02483,
+    52.04393
+   ],
+   [
+    -3.3949,
+    52.32747
+   ]
+  ],
+  "affine_px": [
+   [
+    22.823597,
+    4.441337
+   ],
+   [
+    -4.452947,
+    22.468307
+   ],
+   [
+    1978.462481,
+    -1615.720803
+   ]
+  ]
+ },
+ "p065": {
+  "title": "Worcestershire",
+  "short": "Worcestershire",
+  "year": 1577,
+  "region": "Midlands",
+  "n_read": 21,
+  "n": 21,
+  "n_out": 0,
+  "n_conf1": 20,
+  "px_per_km": 31.252,
+  "km_per_1000px": 32.0,
+  "turn_deg": 9.36,
+  "aniso": 1.011,
+  "med_km": 0.68,
+  "mean_km": 0.67,
+  "p90_km": 0.96,
+  "max_km": 0.98,
+  "med_aff_km": 0.69,
+  "loo_tps_med_km": 0.64,
+  "med_conf1_km": 0.66,
+  "worst": {
+   "name": "Wythall",
+   "err_km": 0.98
+  },
+  "centre": [
+   -2.16,
+   52.2676
+  ],
+  "corners": [
+   [
+    -2.92803,
+    52.71629
+   ],
+   [
+    -1.14823,
+    52.53162
+   ],
+   [
+    -1.38941,
+    51.68435
+   ],
+   [
+    -3.13652,
+    51.86568
+   ]
+  ],
+  "affine_px": [
+   [
+    31.00095,
+    5.179356
+   ],
+   [
+    -5.041659,
+    30.690585
+   ],
+   [
+    1862.091153,
+    -1271.839007
+   ]
+  ]
+ },
+ "p068": {
+  "title": "Shropshire",
+  "short": "Shropshire",
+  "year": 1577,
+  "region": "Midlands",
+  "n_read": 19,
+  "n": 19,
+  "n_out": 0,
+  "n_conf1": 14,
+  "px_per_km": 29.285,
+  "km_per_1000px": 34.15,
+  "turn_deg": 15.59,
+  "aniso": 1.031,
+  "med_km": 1.07,
+  "mean_km": 1.06,
+  "p90_km": 1.91,
+  "max_km": 2.2,
+  "med_aff_km": 0.97,
+  "loo_tps_med_km": 1.37,
+  "med_conf1_km": 0.98,
+  "worst": {
+   "name": "Wem",
+   "err_km": 2.2
+  },
+  "centre": [
+   -2.6287,
+   52.6507
+  ],
+  "corners": [
+   [
+    -3.49188,
+    53.26151
+   ],
+   [
+    -1.62226,
+    52.92477
+   ],
+   [
+    -2.02253,
+    52.04308
+   ],
+   [
+    -3.85766,
+    52.37388
+   ]
+  ],
+  "affine_px": [
+   [
+    28.404938,
+    8.385225
+   ],
+   [
+    -7.531678,
+    28.129078
+   ],
+   [
+    2150.594492,
+    -1438.75772
+   ]
+  ]
+ },
+ "p071": {
+  "title": "Herefordshire",
+  "short": "Herefordshire",
+  "year": 1577,
+  "region": "Midlands",
+  "n_read": 26,
+  "n": 26,
+  "n_out": 0,
+  "n_conf1": 19,
+  "px_per_km": 34.96,
+  "km_per_1000px": 28.6,
+  "turn_deg": 15.52,
+  "aniso": 1.077,
+  "med_km": 0.81,
+  "mean_km": 0.9,
+  "p90_km": 1.45,
+  "max_km": 3.74,
+  "med_aff_km": 0.82,
+  "loo_tps_med_km": 0.97,
+  "med_conf1_km": 0.71,
+  "worst": {
+   "name": "Colwall",
+   "err_km": 3.74
+  },
+  "centre": [
+   -2.6973,
+   52.0696
+  ],
+  "corners": [
+   [
+    -3.30196,
+    52.57535
+   ],
+   [
+    -1.73592,
+    52.34415
+   ],
+   [
+    -2.12894,
+    51.59144
+   ],
+   [
+    -3.67071,
+    51.81765
+   ]
+  ],
+  "affine_px": [
+   [
+    33.55853,
+    7.918218
+   ],
+   [
+    -10.434433,
+    33.119549
+   ],
+   [
+    1964.554317,
+    -1544.984969
+   ]
+  ]
+ },
+ "p074": {
+  "title": "Lincolnshire and Nottinghamshire",
+  "short": "Lincs and Notts",
+  "year": 1576,
+  "region": "Midlands",
+  "n_read": 28,
+  "n": 28,
+  "n_out": 0,
+  "n_conf1": 19,
+  "px_per_km": 19.538,
+  "km_per_1000px": 51.18,
+  "turn_deg": 8.38,
+  "aniso": 1.001,
+  "med_km": 1.65,
+  "mean_km": 1.77,
+  "p90_km": 2.95,
+  "max_km": 4.26,
+  "med_aff_km": 1.65,
+  "loo_tps_med_km": 1.58,
+  "med_conf1_km": 1.49,
+  "worst": {
+   "name": "Boston",
+   "err_km": 4.26
+  },
+  "centre": [
+   -0.5835,
+   53.0856
+  ],
+  "corners": [
+   [
+    -2.0137,
+    54.01663
+   ],
+   [
+    0.94381,
+    53.75764
+   ],
+   [
+    0.5719,
+    52.40861
+   ],
+   [
+    -2.29581,
+    52.65969
+   ]
+  ],
+  "affine_px": [
+   [
+    19.326775,
+    2.851957
+   ],
+   [
+    -2.837259,
+    19.332242
+   ],
+   [
+    2108.527178,
+    -1754.024842
+   ]
+  ]
+ },
+ "p077": {
+  "title": "Derbyshire",
+  "short": "Derbyshire",
+  "year": 1577,
+  "region": "Midlands",
+  "n_read": 20,
+  "n": 20,
+  "n_out": 0,
+  "n_conf1": 18,
+  "px_per_km": 28.174,
+  "km_per_1000px": 35.49,
+  "turn_deg": 10.21,
+  "aniso": 1.024,
+  "med_km": 0.69,
+  "mean_km": 0.98,
+  "p90_km": 2.07,
+  "max_km": 2.49,
+  "med_aff_km": 0.76,
+  "loo_tps_med_km": 1.04,
+  "med_conf1_km": 0.69,
+  "worst": {
+   "name": "Ripley",
+   "err_km": 2.49
+  },
+  "centre": [
+   -1.5171,
+   53.1486
+  ],
+  "corners": [
+   [
+    -2.59194,
+    53.63333
+   ],
+   [
+    -0.58819,
+    53.40381
+   ],
+   [
+    -0.86482,
+    52.47774
+   ],
+   [
+    -2.82728,
+    52.70304
+   ]
+  ],
+  "affine_px": [
+   [
+    27.984026,
+    5.36068
+   ],
+   [
+    -4.732067,
+    27.740246
+   ],
+   [
+    2247.523021,
+    -1130.100396
+   ]
+  ]
+ },
+ "p080": {
+  "title": "Cheshire",
+  "short": "Cheshire",
+  "year": 1577,
+  "region": "North",
+  "n_read": 22,
+  "n": 22,
+  "n_out": 0,
+  "n_conf1": 15,
+  "px_per_km": 33.708,
+  "km_per_1000px": 29.67,
+  "turn_deg": 7.69,
+  "aniso": 1.049,
+  "med_km": 1.29,
+  "mean_km": 1.44,
+  "p90_km": 2.31,
+  "max_km": 3.81,
+  "med_aff_km": 1.3,
+  "loo_tps_med_km": 1.73,
+  "med_conf1_km": 1.3,
+  "worst": {
+   "name": "Chester",
+   "err_km": 3.81
+  },
+  "centre": [
+   -2.4572,
+   53.2834
+  ],
+  "corners": [
+   [
+    -3.34595,
+    53.70302
+   ],
+   [
+    -1.61269,
+    53.57036
+   ],
+   [
+    -1.79647,
+    52.80752
+   ],
+   [
+    -3.49962,
+    52.93777
+   ]
+  ],
+  "affine_px": [
+   [
+    32.926563,
+    4.462806
+   ],
+   [
+    -4.411297,
+    34.569441
+   ],
+   [
+    2140.246276,
+    -1365.069157
+   ]
+  ]
+ },
+ "p083": {
+  "title": "Yorkshire",
+  "short": "Yorkshire",
+  "year": 1577,
+  "region": "North",
+  "n_read": 62,
+  "n": 62,
+  "n_out": 0,
+  "n_conf1": 50,
+  "px_per_km": 17.572,
+  "km_per_1000px": 56.91,
+  "turn_deg": 7.56,
+  "aniso": 1.051,
+  "med_km": 1.77,
+  "mean_km": 1.77,
+  "p90_km": 2.85,
+  "max_km": 4.06,
+  "med_aff_km": 1.42,
+  "loo_tps_med_km": 0.98,
+  "med_conf1_km": 1.56,
+  "worst": {
+   "name": "Scarborough",
+   "err_km": 4.06
+  },
+  "centre": [
+   -1.3873,
+   53.9456
+  ],
+  "corners": [
+   [
+    -2.61357,
+    54.79792
+   ],
+   [
+    0.66247,
+    54.53482
+   ],
+   [
+    0.27228,
+    53.11446
+   ],
+   [
+    -2.89599,
+    53.36856
+   ]
+  ],
+  "affine_px": [
+   [
+    17.83177,
+    2.25104
+   ],
+   [
+    -2.421367,
+    16.976884
+   ],
+   [
+    1637.682257,
+    -1444.735083
+   ]
+  ]
+ },
+ "p086": {
+  "title": "Lancashire",
+  "short": "Lancashire",
+  "year": 1577,
+  "region": "North",
+  "n_read": 24,
+  "n": 24,
+  "n_out": 0,
+  "n_conf1": 16,
+  "px_per_km": 19.471,
+  "km_per_1000px": 51.36,
+  "turn_deg": 7.73,
+  "aniso": 1.022,
+  "med_km": 1.4,
+  "mean_km": 1.66,
+  "p90_km": 2.65,
+  "max_km": 4.04,
+  "med_aff_km": 1.27,
+  "loo_tps_med_km": 1.96,
+  "med_conf1_km": 1.4,
+  "worst": {
+   "name": "Chorley",
+   "err_km": 4.04
+  },
+  "centre": [
+   -2.58,
+   53.7077
+  ],
+  "corners": [
+   [
+    -3.98485,
+    54.64076
+   ],
+   [
+    -1.00913,
+    54.40665
+   ],
+   [
+    -1.34531,
+    53.04825
+   ],
+   [
+    -4.22759,
+    53.27536
+   ]
+  ],
+  "affine_px": [
+   [
+    19.594734,
+    2.569892
+   ],
+   [
+    -2.481494,
+    19.17278
+   ],
+   [
+    2037.228896,
+    -1775.433908
+   ]
+  ]
+ },
+ "p089": {
+  "title": "Durham",
+  "short": "Durham",
+  "year": 1576,
+  "region": "North",
+  "n_read": 19,
+  "n": 19,
+  "n_out": 0,
+  "n_conf1": 14,
+  "px_per_km": 34.48,
+  "km_per_1000px": 29.0,
+  "turn_deg": 4.94,
+  "aniso": 1.14,
+  "med_km": 1.7,
+  "mean_km": 1.63,
+  "p90_km": 2.87,
+  "max_km": 3.4,
+  "med_aff_km": 1.28,
+  "loo_tps_med_km": 1.61,
+  "med_conf1_km": 1.7,
+  "worst": {
+   "name": "South Shields",
+   "err_km": 3.4
+  },
+  "centre": [
+   -1.4966,
+   54.7219
+  ],
+  "corners": [
+   [
+    -2.5968,
+    55.16986
+   ],
+   [
+    -0.72347,
+    55.04389
+   ],
+   [
+    -0.86446,
+    54.30549
+   ],
+   [
+    -2.70436,
+    54.42958
+   ]
+  ],
+  "affine_px": [
+   [
+    31.744639,
+    4.313472
+   ],
+   [
+    -3.191348,
+    36.049597
+   ],
+   [
+    2386.397175,
+    -1515.331975
+   ]
+  ]
+ },
+ "p092": {
+  "title": "Westmorland and Cumberland",
+  "short": "Cumberland",
+  "year": 1576,
+  "region": "North",
+  "n_read": 16,
+  "n": 16,
+  "n_out": 0,
+  "n_conf1": 11,
+  "px_per_km": 20.39,
+  "km_per_1000px": 49.04,
+  "turn_deg": 8.57,
+  "aniso": 1.055,
+  "med_km": 1.63,
+  "mean_km": 1.65,
+  "p90_km": 2.87,
+  "max_km": 3.54,
+  "med_aff_km": 1.24,
+  "loo_tps_med_km": 1.26,
+  "med_conf1_km": 1.34,
+  "worst": {
+   "name": "Kirkby Stephen",
+   "err_km": 3.54
+  },
+  "centre": [
+   -3.0175,
+   54.5378
+  ],
+  "corners": [
+   [
+    -4.18872,
+    55.40295
+   ],
+   [
+    -1.19361,
+    55.12419
+   ],
+   [
+    -1.56172,
+    53.85683
+   ],
+   [
+    -4.46703,
+    54.12776
+   ]
+  ],
+  "affine_px": [
+   [
+    19.700328,
+    3.275104
+   ],
+   [
+    -2.860443,
+    20.704074
+   ],
+   [
+    1739.001599,
+    -1763.888291
+   ]
+  ]
+ },
+ "p095": {
+  "title": "Northumberland",
+  "short": "Northumberland",
+  "year": 1576,
+  "region": "North",
+  "n_read": 17,
+  "n": 17,
+  "n_out": 0,
+  "n_conf1": 9,
+  "px_per_km": 19.204,
+  "km_per_1000px": 52.07,
+  "turn_deg": 8.12,
+  "aniso": 1.039,
+  "med_km": 1.34,
+  "mean_km": 1.25,
+  "p90_km": 1.75,
+  "max_km": 1.96,
+  "med_aff_km": 1.26,
+  "loo_tps_med_km": 1.26,
+  "med_conf1_km": 1.35,
+  "worst": {
+   "name": "Newcastle upon Tyne",
+   "err_km": 1.96
+  },
+  "centre": [
+   -1.7556,
+   55.1614
+  ],
+  "corners": [
+   [
+    -3.36633,
+    56.05511
+   ],
+   [
+    -0.13872,
+    55.84014
+   ],
+   [
+    -0.55845,
+    54.46486
+   ],
+   [
+    -3.67801,
+    54.67039
+   ]
+  ],
+  "affine_px": [
+   [
+    18.702002,
+    2.263708
+   ],
+   [
+    -2.881135,
+    19.082529
+   ],
+   [
+    2166.805263,
+    -1693.836584
+   ]
+  ]
+ },
+ "p098": {
+  "title": "Monmouthshire",
+  "short": "Monmouthshire",
+  "year": 1577,
+  "region": "Wales",
+  "n_read": 25,
+  "n": 25,
+  "n_out": 0,
+  "n_conf1": 19,
+  "px_per_km": 41.109,
+  "km_per_1000px": 24.33,
+  "turn_deg": 9.93,
+  "aniso": 1.135,
+  "med_km": 1.16,
+  "mean_km": 1.25,
+  "p90_km": 2.05,
+  "max_km": 2.11,
+  "med_aff_km": 0.79,
+  "loo_tps_med_km": 0.89,
+  "med_conf1_km": 1.16,
+  "worst": {
+   "name": "Llanvaches",
+   "err_km": 2.11
+  },
+  "centre": [
+   -2.8205,
+   51.7019
+  ],
+  "corners": [
+   [
+    -3.51006,
+    52.12559
+   ],
+   [
+    -2.23879,
+    51.92689
+   ],
+   [
+    -2.38894,
+    51.26503
+   ],
+   [
+    -3.64239,
+    51.46224
+   ]
+  ],
+  "affine_px": [
+   [
+    42.564277,
+    10.056713
+   ],
+   [
+    -5.7134,
+    39.567925
+   ],
+   [
+    2280.70693,
+    -1399.07508
+   ]
+  ]
+ },
+ "p101": {
+  "title": "Glamorgan",
+  "short": "Glamorgan",
+  "year": 1578,
+  "region": "Wales",
+  "n_read": 15,
+  "n": 15,
+  "n_out": 0,
+  "n_conf1": 9,
+  "px_per_km": 33.939,
+  "km_per_1000px": 29.46,
+  "turn_deg": 8.03,
+  "aniso": 1.099,
+  "med_km": 1.12,
+  "mean_km": 1.26,
+  "p90_km": 2.54,
+  "max_km": 3.02,
+  "med_aff_km": 0.93,
+  "loo_tps_med_km": 1.51,
+  "med_conf1_km": 0.47,
+  "worst": {
+   "name": "Llantwit Major",
+   "err_km": 3.02
+  },
+  "centre": [
+   -3.5271,
+   51.5452
+  ],
+  "corners": [
+   [
+    -4.45947,
+    52.03966
+   ],
+   [
+    -2.86493,
+    51.90917
+   ],
+   [
+    -2.98675,
+    51.07263
+   ],
+   [
+    -4.55258,
+    51.20169
+   ]
+  ],
+  "affine_px": [
+   [
+    34.669442,
+    4.280878
+   ],
+   [
+    -2.864759,
+    31.856099
+   ],
+   [
+    2376.744353,
+    -1491.728525
+   ]
+  ]
+ },
+ "p104": {
+  "title": "Radnor, Brecknock, Cardigan and Carmarthen",
+  "short": "Mid and south Wales",
+  "year": 1578,
+  "region": "Wales",
+  "n_read": 48,
+  "n": 48,
+  "n_out": 0,
+  "n_conf1": 36,
+  "px_per_km": 22.103,
+  "km_per_1000px": 45.24,
+  "turn_deg": 8.5,
+  "aniso": 1.069,
+  "med_km": 2.17,
+  "mean_km": 2.29,
+  "p90_km": 4.33,
+  "max_km": 5.4,
+  "med_aff_km": 1.85,
+  "loo_tps_med_km": 1.47,
+  "med_conf1_km": 2.17,
+  "worst": {
+   "name": "Aberystwyth",
+   "err_km": 5.4
+  },
+  "centre": [
+   -3.8578,
+   52.0755
+  ],
+  "corners": [
+   [
+    -4.9508,
+    52.79873
+   ],
+   [
+    -2.48437,
+    52.55366
+   ],
+   [
+    -2.86579,
+    51.30717
+   ],
+   [
+    -5.26618,
+    51.5451
+   ]
+  ],
+  "affine_px": [
+   [
+    22.388386,
+    3.391524
+   ],
+   [
+    -3.858898,
+    21.003613
+   ],
+   [
+    1963.163687,
+    -1452.056855
+   ]
+  ]
+ },
+ "p107": {
+  "title": "Pembrokeshire",
+  "short": "Pembrokeshire",
+  "year": 1578,
+  "region": "Wales",
+  "n_read": 7,
+  "n": 7,
+  "n_out": 0,
+  "n_conf1": 7,
+  "px_per_km": 32.45,
+  "km_per_1000px": 30.82,
+  "turn_deg": 9.98,
+  "aniso": 1.053,
+  "med_km": 1.04,
+  "mean_km": 1.19,
+  "p90_km": 1.72,
+  "max_km": 2.11,
+  "med_aff_km": 1.13,
+  "loo_tps_med_km": 1.55,
+  "med_conf1_km": 1.04,
+  "worst": {
+   "name": "Cardigan",
+   "err_km": 2.11
+  },
+  "centre": [
+   -4.9082,
+   51.8766
+  ],
+  "corners": [
+   [
+    -5.74159,
+    52.33459
+   ],
+   [
+    -3.98845,
+    52.16904
+   ],
+   [
+    -4.25136,
+    51.36559
+   ],
+   [
+    -5.97437,
+    51.5275
+   ]
+  ],
+  "affine_px": [
+   [
+    31.155339,
+    4.980363
+   ],
+   [
+    -5.975242,
+    32.498705
+   ],
+   [
+    2076.329785,
+    -1383.733694
+   ]
+  ]
+ },
+ "p110": {
+  "title": "Montgomery and Merioneth",
+  "short": "Montgomery",
+  "year": 1578,
+  "region": "Wales",
+  "n_read": 25,
+  "n": 25,
+  "n_out": 0,
+  "n_conf1": 22,
+  "px_per_km": 27.821,
+  "km_per_1000px": 35.94,
+  "turn_deg": 8.83,
+  "aniso": 1.058,
+  "med_km": 1.57,
+  "mean_km": 1.74,
+  "p90_km": 2.87,
+  "max_km": 3.94,
+  "med_aff_km": 1.46,
+  "loo_tps_med_km": 1.63,
+  "med_conf1_km": 1.78,
+  "worst": {
+   "name": "Corwen",
+   "err_km": 3.94
+  },
+  "centre": [
+   -3.5168,
+   52.6819
+  ],
+  "corners": [
+   [
+    -4.50132,
+    53.26558
+   ],
+   [
+    -2.49424,
+    53.08917
+   ],
+   [
+    -2.76473,
+    52.09296
+   ],
+   [
+    -4.72755,
+    52.26525
+   ]
+  ],
+  "affine_px": [
+   [
+    27.989841,
+    3.866701
+   ],
+   [
+    -4.275086,
+    26.481017
+   ],
+   [
+    2118.218074,
+    -1478.09668
+   ]
+  ]
+ },
+ "p113": {
+  "title": "Denbigh and Flint",
+  "short": "Denbigh and Flint",
+  "year": 1577,
+  "region": "Wales",
+  "n_read": 25,
+  "n": 25,
+  "n_out": 0,
+  "n_conf1": 22,
+  "px_per_km": 33.957,
+  "km_per_1000px": 29.45,
+  "turn_deg": 11.32,
+  "aniso": 1.162,
+  "med_km": 1.38,
+  "mean_km": 1.61,
+  "p90_km": 2.88,
+  "max_km": 4.34,
+  "med_aff_km": 0.85,
+  "loo_tps_med_km": 0.89,
+  "med_conf1_km": 1.33,
+  "worst": {
+   "name": "Llanrhaeadr-ym-Mochnant",
+   "err_km": 4.34
+  },
+  "centre": [
+   -3.239,
+   53.1144
+  ],
+  "corners": [
+   [
+    -3.9671,
+    53.53982
+   ],
+   [
+    -2.24184,
+    53.38902
+   ],
+   [
+    -2.64946,
+    52.6029
+   ],
+   [
+    -4.3448,
+    52.74807
+   ]
+  ],
+  "affine_px": [
+   [
+    32.108625,
+    4.710365
+   ],
+   [
+    -9.655936,
+    32.587522
+   ],
+   [
+    2009.483886,
+    -1323.410166
+   ]
+  ]
+ },
+ "p116": {
+  "title": "Caernarfon and Anglesey",
+  "short": "Caernarfon and Anglesey",
+  "year": 1578,
+  "region": "Wales",
+  "n_read": 18,
+  "n": 18,
+  "n_out": 0,
+  "n_conf1": 12,
+  "px_per_km": 24.377,
+  "km_per_1000px": 41.02,
+  "turn_deg": 7.87,
+  "aniso": 1.077,
+  "med_km": 1.83,
+  "mean_km": 1.67,
+  "p90_km": 2.56,
+  "max_km": 3.61,
+  "med_aff_km": 1.39,
+  "loo_tps_med_km": 1.55,
+  "med_conf1_km": 1.98,
+  "worst": {
+   "name": "Aberffraw",
+   "err_km": 3.61
+  },
+  "centre": [
+   -4.2646,
+   53.1215
+  ],
+  "corners": [
+   [
+    -5.16216,
+    53.6403
+   ],
+   [
+    -2.83986,
+    53.50665
+   ],
+   [
+    -3.17251,
+    52.41576
+   ],
+   [
+    -5.43768,
+    52.54355
+   ]
+  ],
+  "affine_px": [
+   [
+    24.573925,
+    2.264226
+   ],
+   [
+    -4.080115,
+    24.357587
+   ],
+   [
+    1695.903558,
+    -1281.140333
+   ]
+  ]
+ }
+}

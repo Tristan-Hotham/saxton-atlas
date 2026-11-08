@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Saxton's atlas, measured | How accurate were the first county maps?</title>
+<meta name="description" content="I read {{counts.readings|int}} towns on Christopher Saxton's maps of England and Wales (1574 to 1579): a median town is {{county.med_km|f1}} km from where its county sheet puts it, and north leans about {{turn.median_deg|f0}} degrees west (Cornwall excluded).">
+<meta property="og:title" content="Saxton's atlas, measured">
+<meta property="og:description" content="The first county atlas of England and Wales, set against the real ground: a median error of {{county.med_km|f1}} km and a compass-like tilt of north.">
+<meta property="og:image" content="https://maps.tristanhotham.com/saxton-atlas/header.png">
+<meta property="og:url" content="https://maps.tristanhotham.com/saxton-atlas/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800;9..144,900&family=IBM+Plex+Mono:wght@400;500&family=MedievalSharp&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/maplibre-gl@4.7.1/dist/maplibre-gl.css">
+<style>
+/* Parchment, iron-gall black, vermilion and river blue: the palette of The Inked World. */
+:root{
+  --bg:#F6EED8; --panel:#EFE3C4; --fg:#2B2119; --muted:#6E604E; --rule:#E2D3AE; --card:#FBF5E4; --border:#D3C29A;
+  --hot:#A3261B; --cool:#3D6E9E; --gold:#B8862B;
+  --display:"Fraunces",Georgia,"Times New Roman",serif;
+  --body:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+  --hand:"MedievalSharp","Fraunces",Georgia,serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#1A1612; --panel:#241E18; --fg:#EFE6D4; --muted:#ADA08B; --rule:#3A3128; --card:#211B15; --border:#4D4234;
+  --hot:#E07A6C; --cool:#8FB4DA; --gold:#E2B860; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#1A1612; --panel:#241E18; --fg:#EFE6D4; --muted:#ADA08B; --rule:#3A3128; --card:#211B15; --border:#4D4234;
+  --hot:#E07A6C; --cool:#8FB4DA; --gold:#E2B860; color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--fg);font:400 18px/1.62 var(--body);
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));overflow-x:hidden}
+.wrap{max-width:720px;margin:0 auto;padding-block:28px 64px}
+a{color:inherit;text-decoration-color:var(--hot);text-underline-offset:3px}
+.kicker{font:500 12px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.kicker b{background:var(--hot);color:#fff;padding:5px 8px;font-weight:500}
+h2{font:800 34px/1.04 var(--display);letter-spacing:-.01em;margin:54px 0 10px;text-wrap:balance}
+h2 .n{font:500 13px/1 var(--mono);color:var(--hot);display:block;letter-spacing:.1em;margin-bottom:10px}
+p{margin:0 0 16px}
+.lede::first-letter{font:400 76px/.8 var(--hand);float:left;margin:6px 10px 0 0;color:var(--hot)}
+.byline{font:400 13px/1.4 var(--mono);color:var(--muted);margin-top:14px}
+.src{font:400 12px/1.45 var(--mono);color:var(--muted);margin-top:10px}
+ul.plain{padding-left:20px} ul.plain li{margin:4px 0}
+details{border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:10px 0;margin:18px 0;font-size:16px}
+summary{font:500 13px/1.4 var(--mono);letter-spacing:.06em;text-transform:uppercase;cursor:pointer;color:var(--muted)}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin:30px 0 0}
+.cta a{font:500 13px/1 var(--mono);text-decoration:none;border:1px solid var(--fg);padding:11px 14px;border-radius:3px}
+.cta a.p{background:var(--hot);border-color:var(--hot);color:#fff}
+footer{border-top:6px double var(--fg);margin-top:56px;padding-top:16px;font:400 13px/1.55 var(--mono);color:var(--muted)}
+footer p{margin:0 0 10px}
+.theme{font:500 12px/1 var(--mono);background:var(--card);color:var(--fg);border:1px solid var(--border);border-radius:3px;padding:4px 8px;cursor:pointer;min-height:28px}
+.figure{margin:22px 0}
+.figure img{width:100%;display:block;border:1px solid var(--border);background:#F3E5BF}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin:22px 0}
+.stat b{display:block;font:900 40px/1 var(--display);color:var(--hot)}
+.stat span{font:400 13px/1.35 var(--mono);color:var(--muted)}
+table.t{width:100%;border-collapse:collapse;font:400 13.5px/1.4 var(--mono);margin:12px 0 4px}
+table.t th{text-align:left;font-weight:500;border-bottom:2px solid var(--fg);padding:5px 6px 5px 0}
+table.t td{border-bottom:1px solid var(--rule);padding:5px 6px 5px 0;vertical-align:top}
+table.t td.r,table.t th.r{text-align:right}
+.tscroll{overflow-x:auto}
+
+/* ---- the map ---- */
+.topbar{height:40px;display:flex;align-items:center;gap:14px;margin:0 calc(-1 * max(16px,env(safe-area-inset-left,0px)));padding:0 max(14px,env(safe-area-inset-left,0px));border-bottom:3px double var(--fg);background:var(--bg)}
+.tb-name{font:400 19px/1 var(--hand);color:var(--hot);text-decoration:none;letter-spacing:.03em}
+.tb-k{font:500 11px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.tb-links{margin-left:auto;display:flex;gap:16px;align-items:center;font:500 12px/1 var(--mono)}
+.tb-links a{text-decoration:none}
+.mapband{width:100vw;margin-left:calc(50% - 50vw)}
+.pane{position:relative;height:calc(100vh - 43px);height:calc(100svh - 43px);min-height:480px;background:#F3E5BF;overflow:hidden}
+#map{position:absolute;inset:0}
+.ctl{position:absolute;left:12px;top:12px;z-index:5;width:min(340px,calc(100% - 70px));background:rgba(251,243,220,.96);color:#2B2119;border:2px solid #2B2119;outline:1px solid #2B2119;outline-offset:-6px;padding:12px 14px;font:400 13px/1.35 var(--mono);max-height:calc(100% - 24px);overflow:auto}
+.ctl h1{font:900 24px/1.02 var(--display);margin:0 0 4px;color:#2B2119}.ctl h1 .a{color:#A3261B;font-family:var(--hand);font-weight:400}
+.ctl .byline{font-size:11px;margin:4px 0 8px}
+.ctl select,.ctl input[type=search]{width:100%;font:400 14px var(--mono);background:#FBF5E4;color:#2B2119;border:1px solid #9C8656;border-radius:3px;padding:7px 8px;min-height:38px;margin:4px 0}
+.seg{display:flex;margin:8px 0 4px;border:1px solid #2B2119;border-radius:3px;overflow:hidden}
+.seg button{flex:1;font:500 12px/1 var(--mono);background:#FBF5E4;color:#2B2119;border:0;padding:9px 4px;cursor:pointer;min-height:36px}
+.seg button.on{background:#2B2119;color:#F6EED8}
+.sl{display:flex;align-items:center;gap:8px;margin:6px 0}.sl input{flex:1;accent-color:#A3261B}
+.facts{margin:8px 0 0;border-top:1px dashed #C9B583;padding-top:6px}
+.facts b{color:#A3261B}
+.lyr{margin-top:8px;border-top:1px dashed #C9B583;padding-top:6px}
+.lyr summary{font:500 11px/1.4 var(--mono)}
+.lyr label{display:flex;gap:8px;align-items:center;padding:3px 0;min-height:28px;cursor:pointer}
+.lyr input{accent-color:#A3261B}
+.sug{list-style:none;margin:0;padding:0;max-height:180px;overflow:auto;background:#FBF5E4;border:1px solid #9C8656;display:none}
+.sug li{padding:6px 8px;cursor:pointer;border-bottom:1px solid #E7D9B6}.sug li:hover{background:#EFE1BC}
+.ctl-fold{display:none;font:400 16px var(--hand);color:#A3261B;background:none;border:0;cursor:pointer;padding:0;min-height:30px}
+.maplibregl-popup-content{background:#FBF5E4;color:#2B2119;font:400 13px/1.45 var(--mono);border:1px solid #9C8656;border-radius:4px;padding:10px 12px;max-width:290px}
+.maplibregl-popup-content b.t{display:block;font:400 19px/1.15 var(--hand);color:#A3261B;margin-bottom:3px;padding-right:14px}
+.maplibregl-popup-content td{padding:1px 8px 1px 0;vertical-align:top}.maplibregl-popup-content td:first-child{color:#7A6A52}
+.maplibregl-popup-content a{color:#A3261B}
+.maplibregl-ctrl-attrib{font:400 11px/1.3 var(--mono)!important}
+.key{display:flex;flex-wrap:wrap;gap:4px 12px;margin-top:6px;font-size:12px}.key i{display:inline-block;width:14px;height:3px;vertical-align:middle;margin-right:4px}
+@media (max-width:600px){
+  .tb-k,.tb-links a.x{display:none}.tb-name{font-size:16px}
+  .ctl{left:8px;top:8px;width:calc(100% - 64px);padding:10px}
+  .ctl.folded .body{display:none}.ctl-fold{display:block}
+  .ctl h1{font-size:20px}
+}
+</style>
+</head>
+<body>
+<header class="topbar"><a class="tb-name" href="#top">Saxton's atlas</a><span class="tb-k">measured</span>
+<nav class="tb-links"><a href="#findings">Findings</a><a class="x" href="#method">Method</a><a class="x" href="https://doi.org/10.5281/zenodo.24052723">Paper</a><button class="theme" id="theme" type="button">Theme</button></nav></header>
+<div class="mapband"><div class="pane" id="pane" data-fullscreen-map>
+<div id="map" role="region" aria-label="Map: Saxton's county sheets and the real ground"></div>
+<div class="ctl" id="ctl">
+<button class="ctl-fold" id="fold" type="button">Saxton's atlas, measured ▾</button>
+<div class="body">
+<h1>Saxton's atlas, <span class="a">measured</span></h1>
+<div class="byline">Dr Tristan Hotham · Independent researcher · 2026</div>
+<label for="sheet">Pick a map</label>
+<select id="sheet"></select>
+<input type="search" id="q" placeholder="Find a town, e.g. Ludlow" aria-label="Find a town" autocomplete="off">
+<ul class="sug" id="sug"></ul>
+<div class="seg" role="group" aria-label="View"><button id="vS" class="on" type="button">On Saxton's sheet</button><button id="vM" type="button">On the modern map</button></div>
+<div class="sl" id="slw"><span>Modern</span><input type="range" id="op" min="0" max="1" step="0.05" value="0.75" aria-label="Fade between the modern map and Saxton's sheet"><span>Saxton</span></div>
+<div class="facts" id="facts"></div>
+<div class="key"><span><i style="background:#A3261B"></i>true north to south</span><span><i style="background:#3D6E9E"></i>true east to west</span><span><i style="background:#2B2119;height:2px"></i>misplacement</span></div>
+<details class="lyr" open><summary>Layers</summary>
+<label><input type="checkbox" id="L_sheet" checked> Saxton's sheet</label>
+<label><input type="checkbox" id="L_grid" checked> True grid bent onto the sheet</label>
+<label><input type="checkbox" id="L_arrows" checked> Misplacement arrows</label>
+<label><input type="checkbox" id="L_pts" checked> Towns read</label>
+<label><input type="checkbox" id="L_base" checked> Modern base map (modern view)</label>
+<label><input type="checkbox" id="L_lab" checked> Modern place names (modern view)</label>
+</details>
+</div></div>
+</div></div>
+<main class="wrap" id="top">
+<div class="kicker"><b>Data study</b><span>Maps and measurement</span></div>
+<p class="lede" style="margin-top:22px">Between 1574 and 1579 Christopher Saxton surveyed the counties of England and Wales, had them engraved and published them in 1579 as the first atlas of its counties. How good was it? I read {{counts.readings|int}} towns, bridges and river mouths on all {{counts.sheets_county_total|int}} county maps and on the general map, and set each against where the place really is.</p>
+<div class="stats">
+<div class="stat"><b>{{county.med_km|f1}} km</b><span>median misplacement of a town on its county sheet</span></div>
+<div class="stat"><b>{{county.within2_pct|pc}}</b><span>of towns within 2 km</span></div>
+<div class="stat"><b>{{turn.median_deg|f1}}°</b><span>median lean of north to the west on the county sheets (Cornwall excluded)</span></div>
+<div class="stat"><b>{{gough.ratio_general|f1}}×</b><span>closer than the Gough Map of about 1360, country against country</span></div>
+</div>
+<h2 id="findings"><span class="n">01</span>Saxton's towns are where they should be</h2>
+<p>I fitted each sheet to the real ground with one scale, one turn and one shift, so that every sheet is judged on its own terms. Across {{counts.used_county|int}} readings the median town sits {{county.med_km|f1}} km from where its sheet puts it; {{county.within1_pct|pc}} are within 1 km and all but {{county.over5|int}} within 5 km. The best drawn sheet is {{county.best_name}} (median {{county.best_km|f2}} km), the weakest {{county.worst_name}} ({{county.worst_km|f2}} km). Allowing each sheet to stretch (an affine fit) only brings the median to {{county.med_aff_km|f1}} km, so the shapes are true and not squashed: the median sheet is stretched by a factor of only {{scale.aniso_median|f2}}.</p>
+<div class="figure"><img src="release/blog/b_errors.png" alt="Bar chart of median misplacement for each county sheet" loading="lazy"></div>
+<h2><span class="n">02</span>North leans to the west</h2>
+<p>The surprise is the direction. On {{turn.n_pos|int}} of {{turn.n|int}} county sheets, true north is turned anticlockwise: the top of the sheet points east of true north. The middle half of sheets lean between {{turn.q1_deg|f1}}° and {{turn.q3_deg|f1}}°, with a median of {{turn.median_deg|f1}}° (Cornwall excluded). That is close to the compass variation that William Borough measured at Limehouse in 1580, about 11¼° east, which is what you would expect if the surveys were laid out by magnetic compass. The general map of 1579, by contrast, is turned only {{turn.general_deg|f1}}°. Cornwall is the outlier: turned {{turn.cornwall_deg|f0}}° the other way, possibly so that the long peninsula fits the plate.</p>
+<div class="figure"><img src="release/blog/b_turns.png" alt="Dot plot of the turn of north on each county sheet" loading="lazy"></div>
+<h2><span class="n">03</span>The general map against the Gough Map</h2>
+<p>On the general map of England and Wales ({{general.n|int}} towns read) the median town is {{general.med_km|f1}} km out, at a scale about {{scale.county_over_general_median|f1}} times smaller than a typical county sheet. The <a href="{{gough.page}}">Gough Map</a>, about two centuries older and measured the same way, misplaces its median way station by {{gough.med_km|f1}} km, {{gough.ratio_general|f1}} times as much.</p>
+<h2><span class="n">04</span>Sheets agree with each other</h2>
+<p>{{shared.n|int}} towns appear on two neighbouring county sheets. Taking each back to the ground through its own sheet's fit, the two positions differ by a median of {{shared.med_km|f2}} km, the most being {{shared.max_name}} ({{shared.max_km|f1}} km). Scales differ a lot: {{scale.max_sheet}} is drawn {{scale.ratio|f1}} times larger than {{scale.min_sheet}}.</p>
+<div class="tscroll"><table class="t"><thead><tr><th>Map</th><th class="r">Towns</th><th class="r">Median km</th><th class="r">Turn °</th><th class="r">Stretch</th></tr></thead><tbody>{{TABLE}}</tbody></table></div>
+<h2 id="method"><span class="n">05</span>How I did this</h2>
+<p>The scans are the Bibliothèque nationale de France copy of the atlas on Wikimedia Commons (41 files: the general map, the 34 county maps, a map of Scotland bound with them and five single sheets from other copies, which duplicate Devon, Dorset, Cornwall, Wiltshire and Somerset and were not used). For each sheet I read town symbols (church or castle), named in the engraving, on zoomed crops, guided by a prediction from the towns already read, and matched each to its Wikidata settlement point; I flagged each reading as certain, probable or doubtful in its exact point. {{counts.conf1_pct|pc}} of county readings are certain. True positions were put on a flat frame in kilometres centred on each sheet. Every reading was then checked again on a zoomed crop; misplaced symbols were corrected and doubtful identifications dropped. A thin plate spline bends the true grid onto each sheet.</p>
+<details><summary>Caveats</summary><ul class="plain">
+<li>I read all {{counts.sheets_county_total|int}} county sheets and the general map.</li>
+<li>Wikidata points mark a modern centre, often a few hundred metres from the old church, so part of each misplacement is mine, not Saxton's.</li>
+<li>Readings by eye on 3,840 px scans; the scanner's own skew may add a degree to the turns.</li>
+<li>The magnetic explanation of the turn is a reading of the pattern, not proof; I did not test the scale bars.</li></ul></details>
+<details><summary>Sources and licences</summary><ul class="plain">
+<li>Christopher Saxton, atlas of England and Wales, 1574 to 1579. Bibliothèque nationale de France, <a href="https://gallica.bnf.fr/ark:/12148/btv1b55007148q">ark:/12148/btv1b55007148q</a>; scans via Wikimedia Commons, public domain.</li>
+<li>Settlement points: Wikidata (CC0). Coastlines: Natural Earth (public domain). Base map: OpenFreeMap, © OpenStreetMap contributors (ODbL).</li>
+<li>Borough, W. (1581) A Discours of the Variation of the Cumpas. London. Value as given in Encyclopaedia Britannica (1911), "Magnetism, Terrestrial".</li>
+<li>Evans, I. M. and Lawrence, H. (1979) Christopher Saxton, Elizabethan map-maker. Wakefield Historical Publications and Holland Press.</li></ul></details>
+<div class="cta"><a class="p" href="https://doi.org/10.5281/zenodo.24052723">Read the paper</a><a href="https://blog.tristanhotham.com/2026/10/31/saxton-atlas/">Blog post</a><a href="https://github.com/Tristan-Hotham/saxton-atlas">Data and code</a></div>
+<footer><p>Dr Tristan Hotham · Independent researcher · 2026. Text, figures and derived data CC BY 4.0; code MIT.</p>
+<p>I wrote the text, with drafting and editing assistance from Claude (Anthropic), which also helped prepare the analysis code. I reviewed and checked all text and results.</p></footer>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
+<script>
+const SITE={{SITE}};
+const LS=(k,v)=>{try{if(v===undefined)return localStorage.getItem(k);localStorage.setItem(k,v)}catch(e){return null}};
+(function(){const t=LS('sx-theme');if(t)document.documentElement.dataset.theme=t;
+document.getElementById('theme').onclick=()=>{const c=document.documentElement.dataset.theme==='dark'?'light':'dark';document.documentElement.dataset.theme=c;LS('sx-theme',c)}})();
+const S=0.004; // degrees per web pixel in the sheet frame
+function px2ll(x,y,sh){const lon=(x-sh.w/2)*S;const m=-(y-sh.h/2)*S*Math.PI/180;return [lon,Math.atan(Math.sinh(m))*180/Math.PI]}
+const ids=Object.keys(SITE.sheets).sort((a,b)=>a==='p014'?-1:b==='p014'?1:SITE.sheets[a].sh.localeCompare(SITE.sheets[b].sh));
+const sel=document.getElementById('sheet');
+ids.forEach(id=>{const o=document.createElement('option');o.value=id;o.textContent=SITE.sheets[id].sh+' ('+SITE.sheets[id].y+')';sel.appendChild(o)});
+let cur=new URLSearchParams(location.search).get('s')||LS('sx-sheet')||'p065'; if(!SITE.sheets[cur])cur='p065'; sel.value=cur;
+let view='sheet';
+const BLANK={version:8,glyphs:'https://tiles.openfreemap.org/fonts/{fontstack}/{range}.pbf',sources:{},layers:[{id:'bg',type:'background',paint:{'background-color':'#EFE3C4'}}]};
+const map=new maplibregl.Map({container:'map',style:BLANK,center:[0,0],zoom:2,attributionControl:false,dragRotate:false,pitchWithRotate:false});
+map.addControl(new maplibregl.NavigationControl({showCompass:false}),'bottom-right');
+map.addControl(new maplibregl.AttributionControl({compact:true,customAttribution:'Saxton atlas: BnF via Wikimedia Commons · Wikidata · <a href="https://openfreemap.org">OpenFreeMap</a> © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'}));
+const gridCache={};
+async function grid(id){if(!gridCache[id]){const r=await fetch('data/grid/'+id+'.json');gridCache[id]=await r.json()}return gridCache[id]}
+function fc(f){return {type:'FeatureCollection',features:f}}
+async function geo(id){
+  const sh=SITE.sheets[id];const pts=[],arr=[],lines=[];
+  const conf=['','certain','probable','doubtful point'];
+  sh.p.forEach((p,i)=>{
+    const props={i,name:p[0],eng:p[1],err:p[10],conf:conf[p[11]],qid:p[12]};
+    if(view==='sheet'){pts.push({type:'Feature',properties:props,geometry:{type:'Point',coordinates:px2ll(p[2],p[3],sh)}});
+      arr.push({type:'Feature',properties:props,geometry:{type:'LineString',coordinates:[px2ll(p[2],p[3],sh),px2ll(p[4],p[5],sh)]}});}
+    else{pts.push({type:'Feature',properties:props,geometry:{type:'Point',coordinates:[p[6],p[7]]}});
+      arr.push({type:'Feature',properties:props,geometry:{type:'LineString',coordinates:[[p[6],p[7]],[p[8],p[9]]]}});}
+  });
+  if(view==='sheet'){const g=await grid(id);g.forEach(l=>lines.push({type:'Feature',properties:{d:l.d},geometry:{type:'LineString',coordinates:l.c.map(c=>px2ll(c[0],c[1],sh))}}))}
+  return {pts:fc(pts),arr:fc(arr),grid:fc(lines)};
+}
+const OP=document.getElementById('op');
+async function build(){
+  const id=cur,sh=SITE.sheets[id];
+  const style=view==='sheet'?BLANK:'https://tiles.openfreemap.org/styles/positron';
+  map.setStyle(style,{diff:false});
+  map.once('style.load',async()=>{
+    const g=await geo(id);
+    const corners=view==='sheet'?[px2ll(0,0,sh),px2ll(sh.w,0,sh),px2ll(sh.w,sh.h,sh),px2ll(0,sh.h,sh)]:sh.corners;
+    map.addSource('img',{type:'image',url:'img/sheets/'+id+'.jpg',coordinates:corners});
+    const before=view==='sheet'?undefined:(map.getStyle().layers.find(l=>l.type==='symbol')||{}).id;
+    map.addLayer({id:'img',type:'raster',source:'img',paint:{'raster-opacity':view==='sheet'?1:+OP.value,'raster-fade-duration':0}},before);
+    map.addSource('grid',{type:'geojson',data:g.grid});
+    map.addLayer({id:'grid',type:'line',source:'grid',paint:{'line-color':['match',['get','d'],'v','#A3261B','#3D6E9E'],'line-width':1.1,'line-opacity':.8}});
+    map.addSource('arr',{type:'geojson',data:g.arr});
+    map.addLayer({id:'arr',type:'line',source:'arr',paint:{'line-color':'#2B2119','line-width':2}});
+    map.addSource('pts',{type:'geojson',data:g.pts});
+    map.addLayer({id:'pts',type:'circle',source:'pts',paint:{'circle-radius':['interpolate',['linear'],['zoom'],5,3,10,6],'circle-color':['step',['get','err'],'#3D6E9E',1,'#7FA3B8',2,'#C9A35A',3,'#C2603C',5,'#A3261B'],'circle-stroke-color':'#2B2119','circle-stroke-width':1}});
+    applyLayers();
+    const b=new maplibregl.LngLatBounds();(view==='sheet'?corners:g.pts.features.map(f=>f.geometry.coordinates)).forEach(c=>b.extend(c));
+    map.fitBounds(b,{padding:{top:30,bottom:30,left:innerWidth>700?380:20,right:50},duration:0});
+  });
+  const t=sh.turn;
+  document.getElementById('facts').innerHTML='<b>'+sh.t+'</b>, '+sh.y+'<br>'+sh.n+' towns read · median misplacement <b>'+sh.med.toFixed(2)+' km</b><br>True north turned '+Math.abs(t).toFixed(1)+'° '+(t>=0?'anticlockwise':'clockwise')+' · stretch '+sh.aniso.toFixed(2);
+  document.getElementById('slw').style.display=view==='sheet'?'none':'flex';
+}
+function vis(id,on){if(map.getLayer(id))map.setLayoutProperty(id,'visibility',on?'visible':'none')}
+function applyLayers(){
+  const c=k=>document.getElementById('L_'+k).checked;
+  vis('img',c('sheet'));vis('grid',c('grid'));vis('arr',c('arrows'));vis('pts',c('pts'));
+  if(view==='modern'){map.getStyle().layers.forEach(l=>{if(['img','grid','arr','pts'].includes(l.id))return;
+    if(l.type==='symbol')vis(l.id,c('lab'));else if(l.id!=='background')vis(l.id,c('base'))})}
+}
+['sheet','grid','arrows','pts','base','lab'].forEach(k=>document.getElementById('L_'+k).onchange=applyLayers);
+OP.oninput=()=>{if(map.getLayer('img'))map.setPaintProperty('img','raster-opacity',+OP.value)};
+sel.onchange=()=>{cur=sel.value;LS('sx-sheet',cur);build()};
+const vS=document.getElementById('vS'),vM=document.getElementById('vM');
+vS.onclick=()=>{view='sheet';vS.classList.add('on');vM.classList.remove('on');build()};
+vM.onclick=()=>{view='modern';vM.classList.add('on');vS.classList.remove('on');build()};
+map.on('click','pts',e=>{const p=e.features[0].properties;
+  new maplibregl.Popup({offset:8}).setLngLat(e.lngLat).setHTML('<b class="t">'+p.name+'</b><table><tr><td>engraved</td><td>'+(p.eng||'not legible')+'</td></tr><tr><td>misplaced</td><td>'+(+p.err).toFixed(2)+' km</td></tr><tr><td>reading</td><td>'+p.conf+'</td></tr><tr><td>map</td><td>'+SITE.sheets[cur].t+'</td></tr></table>'+(p.qid&&p.qid.startsWith('Q')?'<a href="https://www.wikidata.org/wiki/'+p.qid+'" target="_blank" rel="noopener">Wikidata '+p.qid+'</a> · ':'')+'<a href="https://gallica.bnf.fr/ark:/12148/btv1b55007148q" target="_blank" rel="noopener">BnF scan</a>').addTo(map)});
+map.on('mouseenter','pts',()=>map.getCanvas().style.cursor='pointer');map.on('mouseleave','pts',()=>map.getCanvas().style.cursor='');
+// search across all sheets
+const IDX=[];ids.forEach(id=>SITE.sheets[id].p.forEach((p,i)=>IDX.push({n:p[0],id,i})));
+const q=document.getElementById('q'),sug=document.getElementById('sug');
+q.oninput=()=>{const v=q.value.trim().toLowerCase();sug.innerHTML='';if(v.length<2){sug.style.display='none';return}
+  IDX.filter(r=>r.n.toLowerCase().includes(v)).slice(0,12).forEach(r=>{const li=document.createElement('li');li.textContent=r.n+' · '+SITE.sheets[r.id].sh;
+  li.onclick=()=>{sug.style.display='none';q.value=r.n;cur=r.id;sel.value=r.id;build();map.once('idle',()=>{const p=SITE.sheets[r.id].p[r.i];const ll=view==='sheet'?px2ll(p[2],p[3],SITE.sheets[r.id]):[p[6],p[7]];map.flyTo({center:ll,zoom:view==='sheet'?7.5:11})})};sug.appendChild(li)});
+  sug.style.display=sug.children.length?'block':'none'};
+document.getElementById('fold').onclick=()=>document.getElementById('ctl').classList.toggle('folded');
+if(innerWidth<600)document.getElementById('ctl').classList.add('folded');
+build();
+</script>
+<!-- map-fullscreen v1 -->
+<style id="mfs-style">
+.mfs-btn{position:absolute;top:10px;right:10px;z-index:1001;width:34px;height:34px;border:2px solid rgba(0,0,0,.25);border-radius:4px;background:#fff;color:#222;cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0;box-shadow:0 1px 4px rgba(0,0,0,.2)}
+.mfs-btn:hover{background:#f2f2f2}
+.mfs-btn svg{width:18px;height:18px}
+.mfs-host.mfs-btn-left .mfs-btn{right:auto;left:54px}
+.mfs-fake{position:fixed!important;inset:0!important;width:100vw!important;height:100vh!important;height:100dvh!important;max-width:none!important;max-height:none!important;margin:0!important;z-index:100000!important;border-radius:0!important}
+html.mfs-lock,html.mfs-lock body{overflow:hidden!important}
+:fullscreen.mfs-host{width:100vw!important;height:100vh!important;max-width:none!important;max-height:none!important;margin:0!important;border-radius:0!important}
+</style>
+<script id="mfs-script">
+(function(){
+  var ICON_OPEN='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg>';
+  var ICON_CLOSE='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M9 4v5H4M15 4v5h5M9 20v-5H4M15 20v-5h5"/></svg>';
+  function poke(){setTimeout(function(){window.dispatchEvent(new Event('resize'));},60);setTimeout(function(){window.dispatchEvent(new Event('resize'));},400);}
+  function realFS(){return document.fullscreenElement||document.webkitFullscreenElement;}
+  function add(el){
+    if(el.__mfs)return; el.__mfs=1;
+    var cs=getComputedStyle(el); if(cs.position==='static')el.style.position='relative';
+    el.classList.add('mfs-host');
+    // avoid clashing with a top-right Leaflet control (e.g. "Map layers")
+    var tr=el.querySelector('.leaflet-top.leaflet-right');
+    if(tr&&tr.children.length){ el.classList.add('mfs-btn-left'); }
+    var b=document.createElement('button'); b.type='button'; b.className='mfs-btn';
+    b.title='Full screen map'; b.setAttribute('aria-label','Full screen map'); b.innerHTML=ICON_OPEN;
+    ['click','dblclick','mousedown','touchstart','wheel'].forEach(function(t){b.addEventListener(t,function(e){e.stopPropagation();},{passive:t!=='click'});});
+    function setIcon(on){b.innerHTML=on?ICON_CLOSE:ICON_OPEN;b.title=on?'Exit full screen':'Full screen map';b.setAttribute('aria-label',b.title);}
+    function exitFake(){el.classList.remove('mfs-fake');document.documentElement.classList.remove('mfs-lock');setIcon(false);poke();}
+    b.addEventListener('click',function(e){
+      e.preventDefault();
+      if(el.classList.contains('mfs-fake')){exitFake();return;}
+      if(realFS()){(document.exitFullscreen||document.webkitExitFullscreen).call(document);return;}
+      var req=el.requestFullscreen||el.webkitRequestFullscreen;
+      if(req){ try{ var p=req.call(el); if(p&&p.catch)p.catch(function(){el.classList.add('mfs-fake');document.documentElement.classList.add('mfs-lock');setIcon(true);poke();}); }catch(err){el.classList.add('mfs-fake');document.documentElement.classList.add('mfs-lock');setIcon(true);poke();} }
+      else { el.classList.add('mfs-fake');document.documentElement.classList.add('mfs-lock');setIcon(true);poke(); }
+    });
+    document.addEventListener('keydown',function(e){if(e.key==='Escape'&&el.classList.contains('mfs-fake'))exitFake();});
+    ['fullscreenchange','webkitfullscreenchange'].forEach(function(t){document.addEventListener(t,function(){setIcon(realFS()===el);poke();});});
+    el.appendChild(b);
+  }
+  function scan(){
+    var els=document.querySelectorAll('[data-fullscreen-map], .leaflet-container, .maplibregl-map, .mapboxgl-map');
+    els.forEach(function(el){
+      if(el.closest('.mfs-host')&&!el.classList.contains('mfs-host'))return;
+      var r=el.getBoundingClientRect(); if(r.width<200||r.height<150)return;
+      add(el);
+    });
+  }
+  function start(){scan(); var n=0; var t=setInterval(function(){scan(); if(++n>20)clearInterval(t);},500);}
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',start); else start();
+})();
+</script>
+<!-- /map-fullscreen -->
+<script src="https://maps.tristanhotham.com/assets/site-nav.js" defer></script>
+</body>
+</html>
